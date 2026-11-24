@@ -1,29 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ONL</title>
 </head>
 <body>
-    <h1> 제목</h1>
-    <P> 그냥 문장</P>
+  <header>
+    <h1>ONL</h1>
+  </header>
 
-    <h2>h2사이즈</h2>
-    <p> 그냥 문장 2</p>
+  <main>
+    <form class="conditions">
+      <section id="subject" aria-labelledby="subjectTitle">
+        <h2 id="subjectTitle">주제</h2>
+        <div id="subjectList"><!-- 동적 버튼 추가 영역 --></div>
+        <button type="button" id="subjectReset">주제 초기화</button>
+      </section>
 
-    <ul> 
-        <li> ul이 뭐였더라</li>
-        <li> 이건 그냥 ul안의 li</li>
-    </ul>
+      <section id="tags" aria-labelledby="tagsTitle">
+        <h2 id="tagsTitle">태그</h2>
+        <div id="tagsList"><!-- 동적 버튼 추가 영역 --></div>
+        <button type="button" id="tagsReset">태그 초기화</button>
+      </section>
 
-    <h2> h2 사이즈</h2>
-    <ol> 
-        <li> ol인데</li>
-        <li> 안에 li</li>
-    </ol>
+      <section id="filterOption" aria-label="상세 조건">
+        <section id="people" aria-labelledby="filterPeople">
+          <h2 id="filterPeople">인원</h2>
+          <div class="peopleCounts">
+            <label for="adultCount">성인</label>
+            <input type="number" id="adultCount" name="adult" min="0" value="0">
 
-    <p><a href="https://developer.mozilla.org/ko/">하이퍼링크는 a href </a></p>
-    <img src="https://picsum.photos/300/200" alt="이미지는 img src">
+            <label for="childCount">어린이</label>
+            <input type="number" id="childCount" name="child" min="0" value="0">
+          </div>
+        </section>
+
+        <section id="price" aria-labelledby="filterPrice">
+          <h2 id="filterPrice">가격</h2>
+          <p>
+            <output id="minPrice">0</output>원 ~
+            <output id="maxPrice">10000000</output>원
+          </p>
+          <div class="priceSlider">
+            <!-- price slider bar (js) -->
+          </div>
+        </section>
+
+        <section id="region" aria-labelledby="filterRegion">
+          <h2 id="filterRegion">지역</h2>
+          <button type="button" id="regionBtn">지역 선택</button>
+        </section>
+      </section>
+    </form>
+  </main>
 </body>
 </html>
